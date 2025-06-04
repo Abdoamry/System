@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Store - Products</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: modalPop 0.4s ease-out;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes modalPop {
+            0% {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h3 {
+            color: #273c75;
+            margin-bottom: 20px;
+        }
+
+        .modal-content p {
+            color: #2f3640;
+            margin-bottom: 20px;
+        }
+
+        .modal-content button {
+            margin: 0 10px;
+        }
+
+        .close-btn {
+            background: #dcdde1;
+            color: #2f3640;
+        }
+
+        .close-btn:hover {
+            background: #b0b1b5;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/login">Login</a> |
+        <a href="/signup">Signup</a> |
+        <a href="/admin">Admin</a> |
+        <a href="/staff">Staff</a> |
+        <a href="/member">Member</a> |
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h2>Welcome to Our Products</h2>
+        <p>Explore our wide range of products after logging in!</p>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="welcomeModal">
+        <div class="modal-content">
+            <h3>Welcome to Our Store!</h3>
+            <p>Log in to explore our exclusive products or sign up to join our community.</p>
+            <button onclick="window.location.href='/login'">Login</button>
+            <button class="close-btn" onclick="closeModal()">Continue Browsing</button>
+        </div>
+    </div>
+
+    <script>
+        // Show modal on page load
+        window.onload = function() {
+            document.getElementById('welcomeModal').style.display = 'flex';
+        }
+
+        // Close modal function
+        function closeModal() {
+            document.getElementById('welcomeModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('welcomeModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

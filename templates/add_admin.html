@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add New Admin</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <nav>
+    <a href="/">Home</a> |
+    <a href="/login">Login</a> |
+    <a href="/signup">Signup</a> |
+    <a href="/admin">Admin</a> |
+    <a href="/staff">Staff</a> |
+    <a href="/member">Member</a> |
+    <a href="/logout">Logout</a>
+</nav>
+<hr />
+
+    <h1>➕ Add New Admin</h1>
+    <form method="POST" action="/add-admin">
+        <label>Username:</label><br />
+        <input type="text" name="username" required /><br />
+        <label>Password:</label><br />
+        <input type="password" name="password" required /><br />
+        <button type="submit">Add Admin</button>
+    </form>
+    <br />
+    <a href="/admin">← Back to Admin Panel</a>
+</body>
+</html>
